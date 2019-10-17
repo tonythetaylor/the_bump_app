@@ -1,0 +1,16 @@
+version: '0.1'
+
+services:
+
+  sample:
+    container_name: the_bump_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '3001:3000'
+    environment:
+      - NODE_ENV=development
